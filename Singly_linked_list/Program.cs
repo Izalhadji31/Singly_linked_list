@@ -14,7 +14,15 @@ namespace Singly_linked_list
         }
     class List
     {
-
+        Node START;
+        public List()
+        {
+            START = null;
+        }
+        public void addNote()/*Method untuk menambahkan sebuah Node kedalam list*/
+        {
+            int 
+        }
     }
-    }
+    
 }

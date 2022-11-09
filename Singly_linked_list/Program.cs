@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
@@ -69,6 +70,19 @@ namespace Singly_linked_list
 
         /*Method untuk menghapus node tertentu di dalam list*/
         public bool delNode(int nim)
+        {
+            Node previous,current;
+            previous = current = null;
+            /*Check apakah Node yang dimaksud ada dalam list atau tidak*/
+            if (Search (nim, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            if (current == START)
+                START = START.next;
+            return true;
+        }
+        /*Method untuk mengecheck apakah node yang dimaksud ada dalam list*/
+        public bool Search(int nim, ref Node previous, ref Node current)
         {
 
         }

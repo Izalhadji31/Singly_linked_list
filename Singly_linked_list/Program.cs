@@ -24,7 +24,7 @@ namespace Singly_linked_list
         {
             int nim;
             string nm;
-            Console.WriteL("\nMasukkan nomer Mahasiswa: ");
+            Console.Write("\nMasukkan nomer Mahasiswa: ");
             nim = Convert.ToInt32(Console.ReadLine());
             Console.Write("\nMasukkan nama Mahasiswa: ");
             nm = Console.ReadLine();
@@ -32,10 +32,45 @@ namespace Singly_linked_list
             nodeBaru.noMhs = nim;
             nodeBaru.nama = nm;
             
-            if (START == null || nim <= STARAT.noMhs)
+            if (START == null || nim <= START.noMhs)
             {
                 if ((START != null) && (nim == START.noMhs))
+                {
+                    Console.WriteLine("\nNomer sama tidak didijinkan\n");
+                    return;
+                }
+                nodeBaru.next = START;
+                START = nodeBaru;
+                return;
             }
+
+            /*Menemukan lokasi node baru di dalam list*/
+
+            Node previous, current;
+
+            previous = START;
+            current = START;
+
+            while ((current != null) && (nim >= current.noMhs))
+            {
+                if (nim == current.noMhs)
+                {
+                    Console.WriteLine("\nNomer mahasiswa sama tidak diijinkan\n");
+                    return ;
+                }
+                previous = current;
+                current = current.next;
+            }
+            /*Node baru akan ditempatkan diantara previous dan current*/
+
+            nodeBaru.next =current;
+            previous.next =nodeBaru;
+        }
+
+        /*Method untuk menghapus node tertentu di dalam list*/
+        public bool delNode(int nim)
+        {
+
         }
     }
     

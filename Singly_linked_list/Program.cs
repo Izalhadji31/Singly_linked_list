@@ -84,8 +84,20 @@ namespace Singly_linked_list
         /*Method untuk mengecheck apakah node yang dimaksud ada dalam list*/
         public bool Search(int nim, ref Node previous, ref Node current)
         {
+            previous = START;
+            current = START;
 
+            while ((current != null) && (nim != current.noMhs))
+            {
+                previous = current;
+                current = current.next;
+            }
+            if (current == null)
+                return (false);
+            else
+                return (true);
         }
+        /*Method untuk Travarse/mengunjungi dan membaca isi list*/
     }
     
 }

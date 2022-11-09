@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace Singly_linked_list
 {
-    internal class Program
-    {
-        static void Main(string[] args)
+    class Node
         {
         }
     }
